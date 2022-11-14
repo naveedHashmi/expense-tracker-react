@@ -16,7 +16,9 @@
   align-items: flex-end;
   flex-flow: column-reverse;
   justify-content: flex-start;
-  flex: 1;
+  flex: 2;
+  color: white;
+  margin-left: 2%;
 }
 
 .expense-item h2 {

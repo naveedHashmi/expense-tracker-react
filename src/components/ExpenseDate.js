@@ -1,16 +1,20 @@
 import './ExpenseDate.css'
 
 
-function ExpenseDate() {
+function ExpenseDate(props) {
+  const date = props.date
+  const month = date.toLocaleString('default', { month: 'long' })
+  const year = date.getFullYear()
+  const day = date.getDay()
   return (
     <div className="expense-date">
       <div className="expense-date__month">
-        Month
+        {month}
       </div>
       <div className="expense-date__year">
-        Year
+        {year}
       </div>
-      <div className="expense-date__date">Date</div>
+      <div className="expense-date__date">{day}</div>
     </div>
   )
 }
