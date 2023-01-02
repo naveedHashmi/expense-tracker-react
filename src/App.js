@@ -5,9 +5,13 @@ import expences from './data/expenses'
 import './App.css';
 
 function App() {
+  const addExpenseHandeler = (expenseData) => {
+    console.log(expenseData);
+  }
+
   return (
     <div className="App">
-      <NewExpense />
+      <NewExpense onAddExpense={addExpenseHandeler}/>
       { expences.map(expenseItem => <ExpenseItem item={expenseItem}/>) }
     </div>
   );
