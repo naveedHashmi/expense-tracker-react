@@ -10,9 +10,9 @@ const ExpenseForm = (props) => {
     event.preventDefault();
 
     const expenseData = {
-      enteredTitle: title,
-      enteredAmount: +amount,
-      enteredDate: new Date(date)
+      title: title,
+      amount: +amount,
+      date: new Date(date)
     }
 
     props.enteredExpenseHandler(expenseData)
