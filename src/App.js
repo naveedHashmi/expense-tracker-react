@@ -1,4 +1,5 @@
 import ExpenseItem from './components/ExpenseItem/ExpenseItem';
+import NewExpense from './components/NewExpense/NewExpense';
 import expences from './data/expenses'
 
 import './App.css';
@@ -6,7 +7,7 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-      <h1>Let's get started</h1>
+      <NewExpense />
       { expences.map(expenseItem => <ExpenseItem item={expenseItem}/>) }
     </div>
   );
