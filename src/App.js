@@ -5,6 +5,7 @@ import defaultExpenses from './data/expenses'
 
 import './App.css';
 import ExpenseFilter from './components/ExpenseFilter/ExpenseFilter';
+import ExpensesChart from './components/ExpensesChart/ExpensesChart';
 
 function App() {
   const [expenses, setExpenses] = useState(defaultExpenses)
@@ -22,13 +23,14 @@ function App() {
   let filteredContent = <h1>No Expenses Found!</h1>
 
   if (filteredExpenses.length > 0) {
-    filteredContent = filteredExpenses.map(expenseItem => <ExpenseItem item={expenseItem}/>)
+    filteredContent = filteredExpenses.map(expenseItem => <ExpenseItem key={expenseItem.id} item={expenseItem}/>)
   }
 
   return (
     <div className="App">
       <NewExpense onAddExpense={addExpenseHandeler}/>
       <ExpenseFilter onDateFilterChange={onDateFilterChange}/>
+      <ExpensesChart expenses={filteredExpenses}/>
       { filteredContent }
     </div>
   );
